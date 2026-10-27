@@ -6,6 +6,17 @@ Mac / Windows 划词翻译 App + 浏览器沉浸式翻译插件。选中文字�
 
 设计思路（为什么叫「无感翻译」、怎么做的、已知的取舍）见 [DESIGN.md](DESIGN.md)。
 
+## 下载（不用自己编译）
+
+去 [Releases](https://github.com/Thurinst/Glide/releases) 页面下载打包好的：
+
+- **Mac**：`无感翻译-mac-2.0.5.dmg`，双击打开，把 `.app` 拖进 `/Applications`
+- **Windows**：`无感翻译-windows-1.0.0.exe`，双击就能跑，不用装 Python
+- **Chrome / ego lite**：`无感翻译-Chrome扩展.zip`，解压后加载已解压的扩展
+- **Edge**：`无感翻译-Edge扩展.zip`，解压后加载已解压的扩展
+
+图标都已打进包里（Mac 的 `.app` 自带「译」图标，Windows 的 `.exe` 自带图标，扩展 zip 里是真实 PNG 图标）。
+
 ## 1. Mac App — `mac-无感翻译/`
 
 菜单栏常驻的划词翻译 App。
