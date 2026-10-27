@@ -1,0 +1,149 @@
+# 无感翻译 — 打包发布
+#
+# 触发方式（二选一）：
+#   1. 推送到 main 且提交信息里带 [release]，自动打 v2.0.5 的包并发 Release。
+#   2. 在 GitHub 网页 Actions → 本工作流 → Run workflow 手动触发（可填 tag）。
+#
+# 产物（Release 的附件，可直接下载）：
+#   无感翻译-mac-2.0.5.dmg        Mac App（双击 .dmg，把 .app 拖进 /Applications）
+#   无感翻译-windows-1.0.0.exe    Windows App（双击就能跑，不用装 Python）
+#   无感翻译-Chrome扩展.zip       Chrome / ego lite 扩展（解压后加载已解压的扩展）
+#   无感翻译-Edge扩展.zip         Edge 扩展（解压后加载已解压的扩展）
+name: Build and Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag（例如 v2.0.5）"
+        required: true
+        default: "v2.0.5"
+
+env:
+  RELEASE_TAG: ${{ inputs.tag || 'v2.0.5' }}
+
+jobs:
+  build-macos:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 生成图标 .icns（蓝底「译」字标）
+        run: |
+          mkdir -p /tmp/AppIcon.iconset
+          swift GenerateIcon.swift /tmp/AppIcon.iconset
+          iconutil -c icns /tmp/AppIcon.iconset -o /tmp/AppIcon.icns
+          ls -la /tmp/AppIcon.icns
+        working-directory: mac-无感翻译
+
+      - name: 编译 Mac App（swiftc）
+        run: ./build.sh
+        working-directory: mac-无感翻译
+
+      - name: 把图标放进 .app
+        run: |
+          cp /tmp/AppIcon.icns "无感翻译.app/Contents/Resources/AppIcon.icns"
+          /usr/libexec/PlistBuddy -c "Delete :CFBundleIconName" "无感翻译.app/Contents/Info.plist" 2>/dev/null || true
+          /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string AppIcon" "无感翻译.app/Contents/Info.plist"
+          ls -la "无感翻译.app/Contents/Resources/AppIcon.icns"
+          /usr/libexec/PlistBuddy -c "Print :CFBundleIconFile" "无感翻译.app/Contents/Info.plist"
+        working-directory: mac-无感翻译
+
+      - name: 打 .dmg
+        run: |
+          hdiutil create -volname "无感翻译" \
+            -srcfolder "mac-无感翻译/无感翻译.app" \
+            -ov -format UDZO "无感翻译-mac-2.0.5.dmg"
+          ls -la "无感翻译-mac-2.0.5.dmg"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac-dmg
+          path: 无感翻译-mac-2.0.5.dmg
+
+  build-windows:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 打包 Windows .exe（含「译」图标）
+        shell: pwsh
+        run: |
+          pip install pyinstaller pillow
+          python -c "import base64; data=open('mac-无感翻译/IconB64/icon_512x512.png.b64').read(); open('windows-无感翻译/icon512.png','wb').write(base64.b64decode(''.join(data.split())))"
+          python -c "from PIL import Image; img=Image.open('windows-无感翻译/icon512.png'); img.save('windows-无感翻译/icon.ico', format='ICO', sizes=[(16,16),(32,32),(48,48),(256,256)])"
+          cd windows-无感翻译
+          pyinstaller --onefile --windowed --name "无感翻译" --icon icon.ico wuganfanyi.py
+          Move-Item dist/无感翻译.exe ../无感翻译-windows-1.0.0.exe
+          Get-Item ../无感翻译-windows-1.0.0.exe | Format-List Length
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-exe
+          path: 无感翻译-windows-1.0.0.exe
+
+  build-extensions:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 打扩展 .zip（内置真实 PNG 图标，开箱即用）
+        run: |
+          set -e
+          mkdir -p build/browser-无感翻译/icons build/edge-无感翻译/icons
+          for sz in 16 48 128; do
+            base64 -d browser-无感翻译/icons/icon${sz}.png.b64 > build/browser-无感翻译/icons/icon${sz}.png
+            base64 -d browser-无感翻译/icons/icon${sz}.png.b64 > build/edge-无感翻译/icons/icon${sz}.png
+          done
+          for f in manifest.json background.js content.js styles.css popup.html popup.js options.html options.js README.md; do
+            cp browser-无感翻译/$f build/browser-无感翻译/
+            cp edge-无感翻译/$f build/edge-无感翻译/
+          done
+          cd build
+          zip -r -q "无感翻译-Chrome扩展.zip" "browser-无感翻译"
+          zip -r -q "无感翻译-Edge扩展.zip" "edge-无感翻译"
+          ls -la *.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extensions
+          path: build/*.zip
+
+  release:
+    needs: [build-macos, build-windows, build-extensions]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: 发 Release 并上传四个包
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -R artifacts
+          gh release create "$RELEASE_TAG" \
+            "artifacts/mac-dmg/无感翻译-mac-2.0.5.dmg" \
+            "artifacts/windows-exe/无感翻译-windows-1.0.0.exe" \
+            "artifacts/extensions/无感翻译-Chrome扩展.zip" \
+            "artifacts/extensions/无感翻译-Edge扩展.zip" \
+            --title "无感翻译 $RELEASE_TAG" \
+            --notes "下载即用，不用自己编译。
+
+          - **Mac**：下载 .dmg，双击打开，把「无感翻译.app」拖进 /Applications；首次运行右键 → 打开（绕过未签名提示），再去「系统设置 → 隐私与安全性 → 辅助功能」勾选它。
+          - **Windows**：下载 .exe，双击就能跑，不用装 Python。
+          - **Chrome / ego lite**：下载 Chrome 扩展 .zip，解压后在 chrome://extensions 开开发者模式 →「加载已解压的扩展程序」→ 选解压出的文件夹。
+          - **Edge**：下载 Edge 扩展 .zip，解压后在 edge://extensions 开开发者模式 →「加载解压缩的扩展」→ 选解压出的文件夹。
+
+          翻译源：Google 免费（默认，不用 Key）/ AI 大模型（OpenAI 兼容）/ DeepL。"
