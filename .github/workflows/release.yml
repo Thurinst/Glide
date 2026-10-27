@@ -27,7 +27,7 @@ env:
 jobs:
   build-macos:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
-    runs-on: macos-latest
+    runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
 
