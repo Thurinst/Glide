@@ -3,6 +3,9 @@
 # 用法：cd 到本目录，./build.sh ，产物在 ./无感翻译.app ，拖进 /Applications 即可
 set -e
 cd "$(dirname "$0")"
+# 目标系统定为 macOS 14：截图用的 CGWindowListCreateImage 在 macOS 15.0 被废弃，
+# 新版 SDK 默认目标 >= 15 会直接报 unavailable；定到 14 才能继续编译，App 行为不变。
+export MACOSX_DEPLOYMENT_TARGET=14.0
 APP="无感翻译.app"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
