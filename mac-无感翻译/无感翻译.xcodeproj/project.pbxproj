@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB4BDBF7551EA24BFECD05BF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C2153AF445A93559E5BE7 /* main.swift */; };
+		72CA57948A2EB5FAEBD5B92F /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FADAD7036821214BBEF737 /* TranslationService.swift */; };
+		3D94F1299B95DC19EFB1B2AF /* SelectionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8F2CE954059DD3ED00E19B /* SelectionMonitor.swift */; };
+		1870DB5FD894A2E049936C21 /* PopupWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E23DEE3558BCCB981DD8BB /* PopupWindow.swift */; };
+		B643327657DE9D944D6CF2D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D022DF6A62E9763FF11D8 /* SettingsView.swift */; };
+		1D68155D9FA0ADAD02A0A747 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78AF7E170C7F59EFC65CBA4 /* AppKit.framework */; };
+		0462C52D1BCA725722877094 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B91049A2E3EB6C48DD5AB1 /* AVFoundation.framework */; };
+		DA1755D1DDA9F3CEEF4A5706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F1CD15299DFFA29C1C22CD /* Assets.xcassets */; };
+		22A88FB9E4B1A056B877FC2E /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EC5B25CAAB1A36D9CDE7E1 /* HistoryStore.swift */; };
+		1A095F4A805835BED95919CB /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E8E9A51260129317BC1E4 /* HotkeyManager.swift */; };
+		46915DC4B9B294E3C7F4ECA7 /* PopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5990972B024626D9B73F929F /* PopButton.swift */; };
+		4F7F111F2A523E34E407D193 /* ScreenshotOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408F33215A909505E3ADF1D /* ScreenshotOCR.swift */; };
+		ACAB8A105F0CAEB81227BCE5 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1CCDA319211E0FDB026236 /* MainWindow.swift */; };
+		9644896FC1E920AC0A5CE169 /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4015561E27C3B090AC796B90 /* Vision.framework */; };
+		7BF5A08012FE466F61EF80D8 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AE952BF1565FEB0E08FB62 /* ServiceManagement.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D01C2153AF445A93559E5BE7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		30FADAD7036821214BBEF737 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
+		8E8F2CE954059DD3ED00E19B /* SelectionMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionMonitor.swift; sourceTree = "<group>"; };
+		75E23DEE3558BCCB981DD8BB /* PopupWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupWindow.swift; sourceTree = "<group>"; };
+		7B6D022DF6A62E9763FF11D8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A78AF7E170C7F59EFC65CBA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		48B91049A2E3EB6C48DD5AB1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		50F1CD15299DFFA29C1C22CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		964E5366E46FADCAE1DD8417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A9FD18BB0A5942FD6AF3E7A /* 无感翻译.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "无感翻译.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCFA2981048D93F41B448F94 /* project.pbxproj */ = {isa = PBXFileReference; lastKnownFileType = text; path = project.pbxproj; sourceTree = "<group>"; };
+		F4EC5B25CAAB1A36D9CDE7E1 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		E60E8E9A51260129317BC1E4 /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
+		5990972B024626D9B73F929F /* PopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopButton.swift; sourceTree = "<group>"; };
+		8408F33215A909505E3ADF1D /* ScreenshotOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotOCR.swift; sourceTree = "<group>"; };
+		7B1CCDA319211E0FDB026236 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		4015561E27C3B090AC796B90 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		92AE952BF1565FEB0E08FB62 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		09480EF7C81335C12C2E5A13 /* icon_16x16.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_16x16.png.b64; sourceTree = "<group>"; };
+		508EE5B362CAEF5166570C7D /* icon_16x16@2x.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon_16x16@2x.png.b64"; sourceTree = "<group>"; };
+		8650F5F09430D78D499E953B /* icon_32x32.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_32x32.png.b64; sourceTree = "<group>"; };
+		05DFCCA0C9685FEFC0E9A5B9 /* icon_32x32@2x.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon_32x32@2x.png.b64"; sourceTree = "<group>"; };
+		94FE51C7C0E70D326344B913 /* icon_128x128.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_128x128.png.b64; sourceTree = "<group>"; };
+		C2218B4EE0D4CCCBDB858065 /* icon_128x128@2x.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon_128x128@2x.png.b64"; sourceTree = "<group>"; };
+		EB0A189AFD688B0001CF1D9B /* icon_256x256.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_256x256.png.b64; sourceTree = "<group>"; };
+		CB21D9CA210D0D895EBD1CCC /* icon_256x256@2x.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon_256x256@2x.png.b64"; sourceTree = "<group>"; };
+		4C94CEFF773DAF815A59BB7D /* icon_512x512.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = icon_512x512.png.b64; sourceTree = "<group>"; };
+		71E3201682F53A634A8627D2 /* icon_512x512@2x.png.b64 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon_512x512@2x.png.b64"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E8F6E023B96FC52E505C422 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D68155D9FA0ADAD02A0A747 /* AppKit.framework in Frameworks */,
+				0462C52D1BCA725722877094 /* AVFoundation.framework in Frameworks */,
+				9644896FC1E920AC0A5CE169 /* Vision.framework in Frameworks */,
+				7BF5A08012FE466F61EF80D8 /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97A63A01E61FD439E8760B8E = {
+			isa = PBXGroup;
+			children = (
+				BBBB76961A0E711C1E7CC214 /* TranslateApp */,
+				F8C5CD2924717326279D49CE /* IconB64 */,
+				50F1CD15299DFFA29C1C22CD /* Assets.xcassets */,
+				964E5366E46FADCAE1DD8417 /* Info.plist */,
+				A92DFF0ECCC221430B532326 /* Frameworks */,
+				61DEB054F32CA5A5B7265A5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		61DEB054F32CA5A5B7265A5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6A9FD18BB0A5942FD6AF3E7A /* 无感翻译.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBBB76961A0E711C1E7CC214 /* TranslateApp */ = {
+			isa = PBXGroup;
+			children = (
+			D01C2153AF445A93559E5BE7 /* main.swift */,
+			30FADAD7036821214BBEF737 /* TranslationService.swift */,
+			8E8F2CE954059DD3ED00E19B /* SelectionMonitor.swift */,
+			75E23DEE3558BCCB981DD8BB /* PopupWindow.swift */,
+			7B6D022DF6A62E9763FF11D8 /* SettingsView.swift */,
+			F4EC5B25CAAB1A36D9CDE7E1 /* HistoryStore.swift */,
+			E60E8E9A51260129317BC1E4 /* HotkeyManager.swift */,
+			5990972B024626D9B73F929F /* PopButton.swift */,
+			8408F33215A909505E3ADF1D /* ScreenshotOCR.swift */,
+			7B1CCDA319211E0FDB026236 /* MainWindow.swift */,
+			);
+			path = TranslateApp;
+			sourceTree = "<group>";
+		};
+		F8C5CD2924717326279D49CE /* IconB64 */ = {
+			isa = PBXGroup;
+			children = (
+				09480EF7C81335C12C2E5A13 /* icon_16x16.png.b64 */,
+				508EE5B362CAEF5166570C7D /* icon_16x16@2x.png.b64 */,
+				8650F5F09430D78D499E953B /* icon_32x32.png.b64 */,
+				05DFCCA0C9685FEFC0E9A5B9 /* icon_32x32@2x.png.b64 */,
+				94FE51C7C0E70D326344B913 /* icon_128x128.png.b64 */,
+				C2218B4EE0D4CCCBDB858065 /* icon_128x128@2x.png.b64 */,
+				EB0A189AFD688B0001CF1D9B /* icon_256x256.png.b64 */,
+				CB21D9CA210D0D895EBD1CCC /* icon_256x256@2x.png.b64 */,
+				4C94CEFF773DAF815A59BB7D /* icon_512x512.png.b64 */,
+				71E3201682F53A634A8627D2 /* icon_512x512@2x.png.b64 */,
+			);
+			path = IconB64;
+			sourceTree = "<group>";
+		};
+		A92DFF0ECCC221430B532326 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A78AF7E170C7F59EFC65CBA4 /* AppKit.framework */,
+				48B91049A2E3EB6C48DD5AB1 /* AVFoundation.framework */,
+				4015561E27C3B090AC796B90 /* Vision.framework */,
+				92AE952BF1565FEB0E08FB62 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = SDKROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		978354DB0C00FC78C3A5524F /* 无感翻译 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 677A2D49D0DB3075EF61352D /* Build configuration list for PBXNativeTarget "无感翻译" */;
+			buildPhases = (
+				D492D47E3A078F6B8AA30A6C /* Decode App Icons */,
+				42E1AF5D6B6E12B38F9C4FF2 /* Sources */,
+				8E8F6E023B96FC52E505C422 /* Frameworks */,
+				FC9C809F4F09679CC33EC6C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "无感翻译";
+			productName = "无感翻译";
+			productReference = 6A9FD18BB0A5942FD6AF3E7A /* 无感翻译.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		985959785319747668373CC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					978354DB0C00FC78C3A5524F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 42F2457111C3233BE6202B3D /* Build configuration list for PBXProject "无感翻译" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97A63A01E61FD439E8760B8E;
+			productRefGroup = 61DEB054F32CA5A5B7265A5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				978354DB0C00FC78C3A5524F /* 无感翻译 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC9C809F4F09679CC33EC6C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1755D1DDA9F3CEEF4A5706 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D492D47E3A078F6B8AA30A6C /* Decode App Icons */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/IconB64/icon_16x16.png.b64",
+				"$(SRCROOT)/IconB64/icon_16x16@2x.png.b64",
+				"$(SRCROOT)/IconB64/icon_32x32.png.b64",
+				"$(SRCROOT)/IconB64/icon_32x32@2x.png.b64",
+				"$(SRCROOT)/IconB64/icon_128x128.png.b64",
+				"$(SRCROOT)/IconB64/icon_128x128@2x.png.b64",
+				"$(SRCROOT)/IconB64/icon_256x256.png.b64",
+				"$(SRCROOT)/IconB64/icon_256x256@2x.png.b64",
+				"$(SRCROOT)/IconB64/icon_512x512.png.b64",
+				"$(SRCROOT)/IconB64/icon_512x512@2x.png.b64",
+			);
+			outputPaths = (
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_16x16.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_16x16@2x.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_32x32.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_32x32@2x.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_128x128.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_128x128@2x.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_256x256.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_256x256@2x.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_512x512.png",
+				"$(SRCROOT)/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\ncd \"$SRCROOT\"\nICONSET_DIR=\"$SRCROOT/Assets.xcassets/AppIcon.appiconset\"\nmkdir -p \"$ICONSET_DIR\"\nif [ ! -f \"$ICONSET_DIR/icon_512x512@2x.png\" ]; then\n  xcrun swift \"$SRCROOT/GenerateIcon.swift\" \"$ICONSET_DIR\" || true\nfi\nfor b64 in \"$SRCROOT/IconB64\"/*.png.b64; do\n  name=$(basename \"$b64\" .png.b64)\n  out=\"$ICONSET_DIR/$name.png\"\n  if [ ! -f \"$out\" ]; then\n    base64 -D -i \"$b64\" -o \"$out\" || true\n  fi\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42E1AF5D6B6E12B38F9C4FF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB4BDBF7551EA24BFECD05BF /* main.swift in Sources */,
+				72CA57948A2EB5FAEBD5B92F /* TranslationService.swift in Sources */,
+				3D94F1299B95DC19EFB1B2AF /* SelectionMonitor.swift in Sources */,
+				1870DB5FD894A2E049936C21 /* PopupWindow.swift in Sources */,
+				B643327657DE9D944D6CF2D3 /* SettingsView.swift in Sources */,
+				22A88FB9E4B1A056B877FC2E /* HistoryStore.swift in Sources */,
+				1A095F4A805835BED95919CB /* HotkeyManager.swift in Sources */,
+				46915DC4B9B294E3C7F4ECA7 /* PopButton.swift in Sources */,
+				4F7F111F2A523E34E407D193 /* ScreenshotOCR.swift in Sources */,
+				ACAB8A105F0CAEB81227BCE5 /* MainWindow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E48FBFDB0FB65C486F25492 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFS = "";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		368B15E8B0FEBFD6F267D49F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFS = "";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F8F0678D341D56A3996397E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "无感翻译";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pudding.wuganfanyi;
+				PRODUCT_NAME = "无感翻译";
+				SWIFT_EMBED_LIBRARIES_WITH_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FE5AE5AC930A8B057AB1CE14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "无感翻译";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				MARKETING_VERSION = 2.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pudding.wuganfanyi;
+				PRODUCT_NAME = "无感翻译";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42F2457111C3233BE6202B3D /* Build configuration list for PBXProject "无感翻译" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E48FBFDB0FB65C486F25492 /* Debug */,
+				368B15E8B0FEBFD6F267D49F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		677A2D49D0DB3075EF61352D /* Build configuration list for PBXNativeTarget "无感翻译" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8F0678D341D56A3996397E4 /* Debug */,
+				FE5AE5AC930A8B057AB1CE14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 985959785319747668373CC6 /* Project object */;
+}

@@ -1,0 +1,9 @@
+# macOS / Xcode
+.DS_Store
+*.xcuserdata/
+DerivedData/
+*.xcworkspace/xcuserdata/
+
+# 构建产物与生成的图标（二进制，构建时由 GenerateIcon.swift / IconB64 自动生成）
+mac-无感翻译/Assets.xcassets/AppIcon.appiconset/*.png
+browser-无感翻译/icons/*.png

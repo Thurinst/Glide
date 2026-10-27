@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>无感翻译 — 设置</title><style>
+  body { max-width: 620px; margin: 30px auto; padding: 0 20px; font-family: -apple-system, "PingFang SC", sans-serif; font-size: 14px; color: #222; line-height: 1.6; }
+  h1 { font-size: 20px; }
+  label { display: block; margin-top: 16px; font-weight: 600; }
+  input, select { width: 100%; padding: 8px 10px; margin-top: 6px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; box-sizing: border-box; }
+  .hint { color: #888; font-size: 12px; margin-top: 4px; }
+  .check { display: flex; align-items: center; gap: 8px; margin-top: 16px; font-weight: 400; }
+  .check input { width: auto; }
+  button { margin-top: 22px; padding: 10px 22px; border: none; border-radius: 8px; background: #4a7dff; color: #fff; font-size: 15px; cursor: pointer; }
+  #saved { color: green; margin-left: 12px; display: none; }
+  code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-size: 13px; }
+</style></head>
+<body>
+  <h1>无感翻译 — 设置</h1>
+  <p>默认 Google 免费机翻，不用填任何 Key，开箱即用。想用更好的质量，再填下面的 AI / DeepL。</p>
+
+  <label>翻译引擎
+    <select id="engine">
+      <option value="googleFree">Google 免费机翻（无需 Key）</option>
+      <option value="openAI">AI 大模型（OpenAI 兼容接口）</option>
+      <option value="deepL">DeepL API</option>
+    </select>
+  </label>
+
+  <div id="aiFields">
+    <label>AI 接口地址 <input id="apiBaseURL" placeholder="https://api.openai.com/v1"></label>
+    <div class="hint">OpenAI：<code>https://api.openai.com/v1</code>　DeepSeek：<code>https://api.deepseek.com/v1</code>　通义：<code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></div>
+    <label>AI API Key <input id="apiKey" type="password" placeholder="sk-..."></label>
+    <label>AI 模型 <input id="model" placeholder="gpt-4o-mini"></label>
+    <div class="hint">如 <code>gpt-4o-mini</code>、<code>deepseek-chat</code>、<code>qwen-plus</code></div>
+  </div>
+
+  <div id="deeplFields">
+    <label>DeepL Key <input id="deepLKey" type="password" placeholder="xxxx:fx"></label>
+    <div class="hint">Free Key 以 <code>:fx</code> 结尾，自动走免费接口。</div>
+  </div>
+
+  <label>目标语言
+    <select id="target">
+      <option value="auto">自动（有中文→英文，否则→中文）</option>
+      <option value="zh-CN">固定译成中文</option>
+      <option value="en">固定译成英文</option>
+    </select>
+  </label>
+
+  <label class="check"><input type="checkbox" id="bilingual"> 双语对照（原文下面显示译文；取消则只显示译文）</label>
+  <label class="check"><input type="checkbox" id="autoTranslate"> 打开网页自动翻译整页（默认关，建议手动 Alt+T）</label>
+
+  <button id="save">保存</button><span id="saved">已保存 ✓</span>
+  <script src="options.js"></script>
+</body>
+</html>
