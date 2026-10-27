@@ -56,13 +56,13 @@ jobs:
         run: |
           hdiutil create -volname "无感翻译" \
             -srcfolder "mac-无感翻译/无感翻译.app" \
-            -ov -format UDZO "无感翻译-mac-2.0.5.dmg"
-          ls -la "无感翻译-mac-2.0.5.dmg"
+            -ov -format UDZO "Glide-mac-2.0.5.dmg"
+          ls -la "Glide-mac-2.0.5.dmg"
 
       - uses: actions/upload-artifact@v4
         with:
           name: mac-dmg
-          path: 无感翻译-mac-2.0.5.dmg
+          path: Glide-mac-2.0.5.dmg
 
   build-windows:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
@@ -82,13 +82,13 @@ jobs:
           python -c "from PIL import Image; img=Image.open('windows-无感翻译/icon512.png'); img.save('windows-无感翻译/icon.ico', format='ICO', sizes=[(16,16),(32,32),(48,48),(256,256)])"
           cd windows-无感翻译
           pyinstaller --onefile --windowed --name "无感翻译" --icon icon.ico wuganfanyi.py
-          Move-Item dist/无感翻译.exe ../无感翻译-windows-1.0.0.exe
-          Get-Item ../无感翻译-windows-1.0.0.exe | Format-List Length
+          Move-Item dist/无感翻译.exe ../Glide-windows-1.0.0.exe
+          Get-Item ../Glide-windows-1.0.0.exe | Format-List Length
 
       - uses: actions/upload-artifact@v4
         with:
           name: windows-exe
-          path: 无感翻译-windows-1.0.0.exe
+          path: Glide-windows-1.0.0.exe
 
   build-extensions:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
@@ -109,8 +109,8 @@ jobs:
             cp edge-无感翻译/$f build/edge-无感翻译/
           done
           cd build
-          zip -r -q "无感翻译-Chrome扩展.zip" "browser-无感翻译"
-          zip -r -q "无感翻译-Edge扩展.zip" "edge-无感翻译"
+          zip -r -q "Glide-Chrome-extension.zip" "browser-无感翻译"
+          zip -r -q "Glide-Edge-extension.zip" "edge-无感翻译"
           ls -la *.zip
 
       - uses: actions/upload-artifact@v4
@@ -135,10 +135,10 @@ jobs:
         run: |
           ls -R artifacts
           gh release create "$RELEASE_TAG" \
-            "artifacts/mac-dmg/无感翻译-mac-2.0.5.dmg" \
-            "artifacts/windows-exe/无感翻译-windows-1.0.0.exe" \
-            "artifacts/extensions/无感翻译-Chrome扩展.zip" \
-            "artifacts/extensions/无感翻译-Edge扩展.zip" \
+            "artifacts/mac-dmg/Glide-mac-2.0.5.dmg" \
+            "artifacts/windows-exe/Glide-windows-1.0.0.exe" \
+            "artifacts/extensions/Glide-Chrome-extension.zip" \
+            "artifacts/extensions/Glide-Edge-extension.zip" \
             --title "无感翻译 $RELEASE_TAG" \
             --notes "下载即用，不用自己编译。
 
