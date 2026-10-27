@@ -40,7 +40,7 @@ jobs:
         working-directory: mac-无感翻译
 
       - name: 编译 Mac App（swiftc）
-        run: ./build.sh
+        run: bash build.sh
         working-directory: mac-无感翻译
 
       - name: 把图标放进 .app
