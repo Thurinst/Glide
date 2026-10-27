@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><style>
+  body { width: 300px; padding: 14px; font-family: -apple-system, "PingFang SC", sans-serif; font-size: 14px; color: #222; }
+  h1 { font-size: 16px; margin: 0 0 4px; }
+  p { color: #666; font-size: 12px; line-height: 1.6; margin: 6px 0; }
+  button { width: 100%; padding: 9px; margin-top: 8px; border: none; border-radius: 8px; background: #4a7dff; color: #fff; font-size: 14px; cursor: pointer; }
+  button.secondary { background: #f0f0f0; color: #333; }
+  kbd { background: #eee; border: 1px solid #ddd; border-radius: 4px; padding: 1px 6px; font-size: 12px; }
+  .status { margin-top: 10px; font-size: 12px; color: #888; }
+</style></head>
+<body>
+  <h1>无感翻译</h1>
+  <p>划词选中文字自动翻译；<kbd>Alt+T</kbd> 翻译整页（再按一次还原），<kbd>Alt+Q</kbd> 翻译选中。</p>
+  <button id="toggle">翻译 / 还原本页</button>
+  <button id="options" class="secondary">设置翻译引擎 / API Key</button>
+  <div class="status" id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

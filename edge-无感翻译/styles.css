@@ -1,0 +1,69 @@
+/* 沉浸式翻译 Lite：译文块 + 划词弹窗 + 提示 */
+.immersive-lite-box {
+  margin: 4px 0 12px 0;
+  padding: 8px 12px;
+  background: #f0f4ff;
+  border-left: 3px solid #4a7dff;
+  border-radius: 6px;
+  color: #1a1a1a;
+  font-size: inherit;
+  line-height: 1.6;
+}
+.immersive-lite-translated { /* 原文保留，原样显示 */ }
+
+.immersive-lite-popup {
+  z-index: 2147483647;
+  width: 320px;
+  max-width: 90vw;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.22);
+  padding: 12px 14px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #222;
+}
+.immersive-lite-popup .il-original {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+.immersive-lite-popup .il-result {
+  font-size: 14px;
+  color: #111;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+.immersive-lite-popup .il-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.immersive-lite-popup .il-actions button {
+  border: 1px solid #ddd;
+  background: #f6f6f6;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.immersive-lite-popup .il-actions button:hover { background: #e8e8e8; }
+
+.immersive-lite-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  background: rgba(0,0,0,.82);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  transition: opacity .3s;
+  pointer-events: none;
+}
