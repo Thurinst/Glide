@@ -6,7 +6,7 @@
 #
 # 产物（Release 的附件，可直接下载）：
 #   无感翻译-mac-2.0.5.dmg        Mac App（双击 .dmg，把 .app 拖进 /Applications）
-#   无感翻译-windows-1.0.0.exe    Windows App（双击就能跑，不用装 Python）
+#   无感翻译-windows-2.0.0.exe    Windows App（双击就能跑，不用装 Python）
 #   无感翻译-Chrome扩展.zip       Chrome / ego lite 扩展（解压后加载已解压的扩展）
 #   无感翻译-Edge扩展.zip         Edge 扩展（解压后加载已解压的扩展）
 name: Build and Release
@@ -82,13 +82,13 @@ jobs:
           python -c "from PIL import Image; img=Image.open('windows-无感翻译/icon512.png'); img.save('windows-无感翻译/icon.ico', format='ICO', sizes=[(16,16),(32,32),(48,48),(256,256)])"
           cd windows-无感翻译
           pyinstaller --onefile --windowed --name "无感翻译" --icon icon.ico wuganfanyi.py
-          Move-Item dist/无感翻译.exe ../Glide-windows-1.0.0.exe
-          Get-Item ../Glide-windows-1.0.0.exe | Format-List Length
+          Move-Item dist/无感翻译.exe ../Glide-windows-2.0.0.exe
+          Get-Item ../Glide-windows-2.0.0.exe | Format-List Length
 
       - uses: actions/upload-artifact@v4
         with:
           name: windows-exe
-          path: Glide-windows-1.0.0.exe
+          path: Glide-windows-2.0.0.exe
 
   build-extensions:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, '[release]')
@@ -136,7 +136,7 @@ jobs:
           ls -R artifacts
           gh release create "$RELEASE_TAG" \
             "artifacts/mac-dmg/Glide-mac-2.0.5.dmg" \
-            "artifacts/windows-exe/Glide-windows-1.0.0.exe" \
+            "artifacts/windows-exe/Glide-windows-2.0.0.exe" \
             "artifacts/extensions/Glide-Chrome-extension.zip" \
             "artifacts/extensions/Glide-Edge-extension.zip" \
             --title "无感翻译 $RELEASE_TAG" \
